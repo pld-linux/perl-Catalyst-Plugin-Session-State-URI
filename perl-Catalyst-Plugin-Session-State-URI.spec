@@ -6,7 +6,7 @@
 %define	pdir	Catalyst
 %define	pnam	Plugin-Session-State-URI
 Summary:	Catalyst::Plugin::Session::State::URI - Saves session IDs by rewriting URIs
-#Summary(pl):	
+Summary(pl):	Catalyst::Plugin::Session::State::URL - przechowywanie ID sesji w URI
 Name:		perl-Catalyst-Plugin-Session-State-URI
 Version:	0.01
 Release:	1
@@ -15,6 +15,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	dd716fc598bed7e202b2632e92d08e5d
+URL:		http://search.cpan.org/dist/Catalyst-Plugin-Session-State-URI/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -27,14 +28,22 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-In order for Catalyst::Plugin::Session to work the session ID needs to be
-stored on the client, and the session data needs to be stored on the server.
+In order for Catalyst::Plugin::Session to work the session ID needs to
+be stored on the client, and the session data needs to be stored on
+the server.
 
-This plugin cheats and instead of storing the session id on the client, it
-simply embeds the session id into every URI sent to the user.
+This plugin cheats and instead of storing the session ID on the
+client, it simply embeds the session ID into every URI sent to the
+user.
 
-# %description -l pl
-# TODO
+%description -l pl
+Aby wtyczka Catalyst::Plugin::Session dzia³a³a, identyfikator sesji
+musi byæ przechowywany po stronie klienta, a dane sesji - po stronie
+serwera.
+
+Ta wtyczka oszukuje i zamiast przechowywaæ ID sesji po stronie
+klienta, po prostu osadza ID sesji w ka¿dym URI wysy³anym do
+u¿ytkownika.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
