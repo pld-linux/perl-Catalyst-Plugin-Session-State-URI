@@ -8,21 +8,22 @@
 Summary:	Catalyst::Plugin::Session::State::URI - Saves session IDs by rewriting URIs
 Summary(pl):	Catalyst::Plugin::Session::State::URL - przechowywanie ID sesji w URI
 Name:		perl-Catalyst-Plugin-Session-State-URI
-Version:	0.01
+Version:	0.02
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	dd716fc598bed7e202b2632e92d08e5d
+# Source0-md5:	340ec60b008f8abe5fde8661a393b960
 URL:		http://search.cpan.org/dist/Catalyst-Plugin-Session-State-URI/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Catalyst-Plugin-Session >= 0.01
+BuildRequires:	perl-HTML-TokeParser-Simple
+BuildRequires:	perl-MIME-Types
 BuildRequires:	perl-Test-MockObject >= 1.01
-BuildRequires:	perl-URI-Escape
-BuildRequires:	perl-URI-Find >= 0.13
+BuildRequires:	perl-URI
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -68,5 +69,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %{perl_vendorlib}/Catalyst/Plugin/Session/State/*.pm
-%{perl_vendorlib}/Catalyst/Plugin/Session/State/URI
+#%{perl_vendorlib}/Catalyst/Plugin/Session/State/URI
 %{_mandir}/man3/*
