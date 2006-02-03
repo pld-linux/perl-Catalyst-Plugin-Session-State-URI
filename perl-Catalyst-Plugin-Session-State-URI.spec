@@ -16,6 +16,7 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	340ec60b008f8abe5fde8661a393b960
 URL:		http://search.cpan.org/dist/Catalyst-Plugin-Session-State-URI/
+BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -68,6 +69,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%{perl_vendorlib}/Catalyst/Plugin/Session/State/*.pm
-#%{perl_vendorlib}/Catalyst/Plugin/Session/State/URI
+%{perl_vendorlib}/Catalyst/Plugin/Session/State/URI.pm
 %{_mandir}/man3/*
