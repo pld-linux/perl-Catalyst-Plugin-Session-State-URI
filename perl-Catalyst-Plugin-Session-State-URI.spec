@@ -6,7 +6,7 @@
 %define	pdir	Catalyst
 %define	pnam	Plugin-Session-State-URI
 Summary:	Catalyst::Plugin::Session::State::URI - Saves session IDs by rewriting URIs
-Summary(pl):	Catalyst::Plugin::Session::State::URL - przechowywanie ID sesji w URI
+Summary(pl.UTF-8):   Catalyst::Plugin::Session::State::URL - przechowywanie ID sesji w URI
 Name:		perl-Catalyst-Plugin-Session-State-URI
 Version:	0.02
 Release:	1
@@ -38,14 +38,14 @@ This plugin cheats and instead of storing the session ID on the
 client, it simply embeds the session ID into every URI sent to the
 user.
 
-%description -l pl
-Aby wtyczka Catalyst::Plugin::Session dzia≥a≥a, identyfikator sesji
-musi byÊ przechowywany po stronie klienta, a dane sesji - po stronie
+%description -l pl.UTF-8
+Aby wtyczka Catalyst::Plugin::Session dzia≈Ça≈Ça, identyfikator sesji
+musi byƒá przechowywany po stronie klienta, a dane sesji - po stronie
 serwera.
 
-Ta wtyczka oszukuje i zamiast przechowywaÊ ID sesji po stronie
-klienta, po prostu osadza ID sesji w kaødym URI wysy≥anym do
-uøytkownika.
+Ta wtyczka oszukuje i zamiast przechowywaƒá ID sesji po stronie
+klienta, po prostu osadza ID sesji w ka≈ºdym URI wysy≈Çanym do
+u≈ºytkownika.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
