@@ -6,7 +6,7 @@
 %define	pdir	Catalyst
 %define	pnam	Plugin-Session-State-URI
 Summary:	Catalyst::Plugin::Session::State::URI - Saves session IDs by rewriting URIs
-Summary(pl.UTF-8):   Catalyst::Plugin::Session::State::URL - przechowywanie ID sesji w URI
+Summary(pl.UTF-8):	Catalyst::Plugin::Session::State::URL - przechowywanie ID sesji w URI
 Name:		perl-Catalyst-Plugin-Session-State-URI
 Version:	0.02
 Release:	1
