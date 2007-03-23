@@ -8,13 +8,13 @@
 Summary:	Catalyst::Plugin::Session::State::URI - Saves session IDs by rewriting URIs
 Summary(pl.UTF-8):	Catalyst::Plugin::Session::State::URL - przechowywanie ID sesji w URI
 Name:		perl-Catalyst-Plugin-Session-State-URI
-Version:	0.02
+Version:	0.07
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	340ec60b008f8abe5fde8661a393b960
+# Source0-md5:	be39a3fb40075eb72fededc51b02e4bc
 URL:		http://search.cpan.org/dist/Catalyst-Plugin-Session-State-URI/
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -25,6 +25,7 @@ BuildRequires:	perl-HTML-TokeParser-Simple
 BuildRequires:	perl-MIME-Types
 BuildRequires:	perl-Test-MockObject >= 1.01
 BuildRequires:	perl-URI
+BuildRequires:	perl-URI-Find
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -51,17 +52,17 @@ użytkownika.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Build.PL \
-	destdir=$RPM_BUILD_ROOT \
-	installdirs=vendor
-./Build
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
+%{__make}
 
-%{?with_tests:./Build test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-./Build install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
